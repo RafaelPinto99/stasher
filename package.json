@@ -1,0 +1,18 @@
+{
+    "name": "stasher",
+    "version": "1.0.0",
+    "description": "Stasher is a web app for tracking job applications you have applied to or intend to apply to.",
+    "author": "Rafael Abreu Pinto",
+    "private": true,
+    "workspaces": [
+        "frontend",
+        "extension",
+        "packages/*"
+    ],
+    "engines": {
+        "node": ">=24.0.0"
+    },
+    "allowScripts": {
+        "unrs-resolver@1.12.2": true
+    }
+}

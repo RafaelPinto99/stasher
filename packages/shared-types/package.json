@@ -1,0 +1,6 @@
+{
+    "name": "@stasher/shared-types",
+    "version": "1.0.0",
+    "description": "Shared types for the Stasher project",
+    "private": true
+}
