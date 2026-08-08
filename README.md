@@ -21,13 +21,20 @@ modules, each following a Controller → Service → Repository layering.
 
 ```
 stasher/
-├── backend/            Spring Boot (Maven)
+├── backend/            Spring Boot (Maven), one package per domain module
+│   ├── auth/           Login, register, tokens (User, RefreshToken)
+│   ├── jobapplication/ Job applications (core resource)
+│   ├── company/        Companies (no own endpoints - resolved internally)
+│   └── config/         Cross-cutting: security, JWT filter
 ├── frontend/           Next.js
 ├── extension/          Chrome extension (Manifest V3)
 ├── packages/
 │   └── shared-types/   TypeScript types shared between frontend and extension
 └── .github/workflows/  CI/CD
 ```
+
+Each backend module follows the Controller → Service → Repository layering
+(package-by-feature, not package-by-layer).
 
 ## Status
 
