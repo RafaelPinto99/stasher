@@ -17,6 +17,10 @@ Web app for tracking job applications, with a Chrome extension as the key differ
 Modular monolith - a single deployment process, internally split into domain
 modules, each following a Controller → Service → Repository layering.
 
+## Database Schema
+
+![Database schema](docs/db-schema.jpg)
+
 ## Repository structure
 
 ```
