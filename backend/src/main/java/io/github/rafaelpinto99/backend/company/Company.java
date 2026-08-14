@@ -20,7 +20,7 @@ public class Company {
 
     @Column(nullable = false)
     private String name;
-    @Column
+    @Column(unique = true)
     private String url;
     @Column(nullable = false, updatable = false)
     private Instant createdAt;
