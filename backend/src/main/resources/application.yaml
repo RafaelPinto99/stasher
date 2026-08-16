@@ -3,8 +3,8 @@ spring:
     name: backend
   datasource:
     url: jdbc:postgresql://localhost:5432/stasher
-    username: rafaelp
-    password: qwer1234
+  profiles:
+    active: local
   jpa:
     hibernate:
       ddl-auto: validate
