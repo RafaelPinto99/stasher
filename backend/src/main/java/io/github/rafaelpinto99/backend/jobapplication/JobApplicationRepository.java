@@ -1,0 +1,10 @@
+package io.github.rafaelpinto99.backend.jobapplication;
+
+import java.util.List;
+import java.util.UUID;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface JobApplicationRepository extends JpaRepository<JobApplication, UUID> {
+    List<JobApplication> findByUserId(UUID userId);
+}
