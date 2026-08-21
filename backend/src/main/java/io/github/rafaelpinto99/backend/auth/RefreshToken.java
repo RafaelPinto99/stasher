@@ -22,15 +22,11 @@ public class RefreshToken {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @Column(nullable = false, unique = true)
     private String tokenHash;
-    @Column(nullable = false)
     private Instant expiresAt;
-    @Column(nullable = false)
     private boolean revoked;
-    @Column
     private Instant revokedAt;
-    @Column(nullable = false, updatable = false)
+    @Column(updatable = false)
     private Instant createdAt;
 
     @PrePersist
@@ -40,6 +36,6 @@ public class RefreshToken {
     }
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id")
     private User user;
 }

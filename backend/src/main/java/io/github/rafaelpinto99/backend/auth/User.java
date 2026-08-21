@@ -18,11 +18,9 @@ public class User {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     
-    @Column(nullable = false)
     private String email;
-    @Column(nullable = false)
     private String passwordHash;
-    @Column(nullable = false, updatable = false)
+    @Column(updatable = false)
     private Instant createdAt;
 
     @PrePersist

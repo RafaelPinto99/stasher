@@ -27,20 +27,14 @@ public class JobApplication {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @Column(nullable = false)
     private String role;
-    @Column
     private String url;
-    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private Status status;
-    @Column
     private LocalDate appliedDate;
-    @Column
     private String notes;
-    @Column(nullable = false, updatable = false)
+    @Column(updatable = false)
     private Instant createdAt;
-    @Column(nullable = false)
     private Instant updatedAt;
 
     @PrePersist
@@ -55,11 +49,11 @@ public class JobApplication {
     }
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id")
     private User user;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "company_id", nullable = false)
+    @JoinColumn(name = "company_id")
     private Company company;
 
     public enum Status{
