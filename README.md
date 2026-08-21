@@ -40,6 +40,44 @@ stasher/
 Each backend module follows the Controller → Service → Repository layering
 (package-by-feature, not package-by-layer).
 
+## Getting started
+
+Requires:
+- [Docker](https://docs.docker.com/get-docker/) - runs the local PostgreSQL instance
+- [Node.js](https://nodejs.org/) 24+ - frontend and shared packages
+- JDK 25 - backend
+
+1. Clone the repo:
+   ```
+   git clone https://github.com/RafaelPinto99/stasher.git
+   cd stasher
+   ```
+2. Copy the root environment template and fill in your own local credentials:
+   ```
+   cp .env.example .env
+   ```
+3. Start the database:
+   ```
+   docker compose up -d
+   ```
+4. Copy the backend's local config template, using the same credentials as `.env`:
+   ```
+   cp backend/src/main/resources/application-local.yaml.example backend/src/main/resources/application-local.yaml
+   ```
+5. Install JS dependencies (frontend + shared packages, via npm workspaces):
+   ```
+   npm install
+   ```
+6. Run the backend:
+   ```
+   cd backend
+   ./mvnw spring-boot:run
+   ```
+7. In a separate terminal, run the frontend:
+   ```
+   npm run dev -w frontend
+   ```
+
 ## Status
 
 Early development.
