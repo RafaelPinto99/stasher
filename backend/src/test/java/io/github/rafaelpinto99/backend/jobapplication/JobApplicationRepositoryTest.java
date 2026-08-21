@@ -54,6 +54,6 @@ public class JobApplicationRepositoryTest {
 
         List<JobApplication> foundApplications = jobApplicationRepository.findByUserId(userId);
 
-        assertThat(foundApplications).hasSize(1);
+        assertThat(foundApplications).containsExactly(jobApplication);
     }
 }
