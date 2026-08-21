@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+.next/
+dist/
+build/
+target/
+*.class
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# Cursor
+.cursor/
+
+# Brand
+brand/
+
+# Personal practice material - not part of the public portfolio
+CONTRIBUTING.md
+
+# Claude Code - AI tooling used during development, never committed
+CLAUDE.md
+AGENTS.md
+.claude/
